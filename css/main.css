@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------CABECERA---------*/
+#cabecera{
+    background-color: rgb(96, 96, 96);
+    width: 100vw;
+    height: 20vw;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+}
+#titulo{
+    color:aliceblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*---------------SECCION BOTONERA----------------*/
+#containerbotonera{
+    background-color: bisque;
+    width: 100vw;
+    height: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#txtfotos{
+    display: flex;
+    justify-content: center;
+}
+
+
+#botonera{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#txtbusqueda{
+    display: flex;
+   justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+/*---------------768px---------------*/
+@media screen and (min-width: 768px){
+    
+}/*768px*/
+
+
+
+/*---------------992px---------------*/
+@media screen and (min-width: 992px){
+    
+}/*992px*/
+
+
+
+
+/*---------------1200px---------------*/
+@media screen and (min-width: 1200px){
+    
+}/*1200px*/
