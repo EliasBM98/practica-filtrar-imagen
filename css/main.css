@@ -1,8 +1,18 @@
+/*-------------GLOBALES---------*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+.flexContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
 
 /*-------------CABECERA---------*/
 #cabecera{
@@ -13,40 +23,76 @@
     align-items: center;
     align-content: center;
     text-align: center;
-
 }
+
 #titulo{
     color:aliceblue;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+
+
+
 /*---------------SECCION BOTONERA----------------*/
-#containerbotonera{
-    background-color: bisque;
-    width: 100vw;
-    height: 25vw;
+#zonaFoto{
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#containerBotonera{
+    background-color: rgb(173, 173, 173);
+    width: 100vw;
+    height: 15vw;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 }
 
-
-#txtfotos{
-    display: flex;
-    justify-content: center;
-}
-
-
 #botonera{
-    width: 70%;
     display: flex;
-    justify-content: space-around;
+    width: 60%;
+    margin: auto;    
+    
 }
 
-#txtbusqueda{
-    display: flex;
-   justify-content: flex-end;
+#botonera button{
+  
+  border-radius: 5px;
+  height: 20px;
+  width: 80px;
 }
+    
+
+
+/*---------------SECCION FOTOS----------------*/
+#fonaFoto{
+    display: flex;
+    width: 100vw; 
+}
+
+
+
+#txtBusqueda{
+    margin: 20px;
+  }
+
+
+
+#foto{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+ }
+
+
+   
+
 
 
 
@@ -57,14 +103,37 @@
 
 /*---------------768px---------------*/
 @media screen and (min-width: 768px){
+   #cabecera{
+        width: 100vw;
+    }
+    #containerBotonera{
+        width: 100vw;
+    }
+    #zonaFoto{
+        width: 100vw;
+     }
     
-}/*768px*/
+} 
+/*768px*/
 
 
 
 /*---------------992px---------------*/
 @media screen and (min-width: 992px){
-    
+    #cabecera{
+        width: 100vw;
+    }
+    #containerBotonera{
+        width: 100vw;
+    }
+    #zonaFoto{
+        width: 100vw;
+     }
+    #foto{
+        flex-direction: row;
+        justify-content: center;
+    }
+
 }/*992px*/
 
 
@@ -72,5 +141,15 @@
 
 /*---------------1200px---------------*/
 @media screen and (min-width: 1200px){
+    #cabecera{
+        width: 100vw;
+    }
+    #containerBotonera{
+        width: 100vw;
+    }
+    #zonaFoto{
+        width: 100vw;
+     }
+
     
 }/*1200px*/
