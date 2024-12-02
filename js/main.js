@@ -103,13 +103,12 @@ const arrayFotos =[
 const arrayBotones = []
 
 
-
 /* EVENTOS */
 
 document.addEventListener("click",(ev)=>{
     if(ev.target.matches('#botonera button')){
         const tag=ev.target.id
-        filtrar(tag)
+        filtrarImagenes(tag)
     }
 })
 
@@ -119,6 +118,7 @@ document.addEventListener("click",(ev)=>{
 const crearBotones=()=>{
   arrayFotos.forEach((elemento)=>{
     let obtenidos = elemento.tags;
+   
 
     obtenidos.forEach((tags)=>{
         if(!arrayBotones.includes(tags)){
@@ -129,15 +129,21 @@ const crearBotones=()=>{
   return arrayBotones;
 }
 
+
+
 //Pintar botones
-const pintarBotones=()=>{
-    arrayBotones.forEach((item)=>{
+const pintarBotones=(array)=>{
+    
+    array.forEach((item)=>{
         botonera.innerHTML+=`<button id="${item}">${item}</button>`
+ 
     })
 }
+      
 
-//Filtrar en funcion del tag
-const filtrar=(tag)=>{
+
+//Filtrar imagenes en funcion del tag
+const filtrarImagenes=(tag)=>{
 console.log({tag})
    let array= arrayFotos.filter((item)=>  item.tags.includes(tag))
    pintarFotos(array)
@@ -145,22 +151,23 @@ console.log({tag})
 
 
 
-//Pintar imagenes en el cuerpo de la pagina (ARRAY FOTOS ESTATICO)
+//Pintar imagenes en el cuerpo de la pagina 
 const pintarFotos=(array)=>{
  fotos.innerHTML=""
 
     array.forEach((item)=>{
 
-        const caja=document.createElement('FIGURE')//Construye caja contenedora
+        const caja=document.createElement('DIV')//Construye caja contenedora
+        caja.classList.add('card')
     
         const imagen=document.createElement('IMG')//Construye imagen
         imagen.src=item.src;
         imagen.alt=item.alt;
     
-        const pie=document.createElement('FIGCAPTION')//Construye pie de foto
+        const pie=document.createElement('P')//Construye pie de foto
         pie.textContent=item.descripcion
     
-        const titulo=document.createElement('FIGCAPTION')// construye titulo
+        const titulo=document.createElement('H2')// construye titulo
         titulo.textContent=item.alt
     
         caja.append(titulo, imagen, pie) //mete titulo, imagen y pie en caja
@@ -168,16 +175,16 @@ const pintarFotos=(array)=>{
     
     })
     fotos.append(fragment) //monta fragment en el dom a través de fotos
-    
-
 }
 
+
+//Resumen busqueda 
 
 
 
 /* INVOCACIÓNES */
-pintarBotones()
 crearBotones()
+pintarBotones(arrayBotones)
 
 
 
